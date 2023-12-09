@@ -26,6 +26,7 @@ class SignInPage extends GetView {
         child: Column(
           children: [
             Container(
+
               width: 76.w,
               height: 76.w,
               margin: EdgeInsets.symmetric(horizontal: 15.w),
