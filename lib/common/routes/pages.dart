@@ -5,10 +5,8 @@ import 'package:firebase_chat/common/middlewares/middlewares.dart';
 import 'package:get/get.dart';
 
 import 'package:firebase_chat/pages/welcome/index.dart';
-import 'package:firebase_chat/pages/sign_in/index2.dart';
-
-
-
+import 'package:firebase_chat/pages/sign_in/index.dart';
+import 'package:firebase_chat/pages/application/index.dart';
 
 import 'routes.dart';
 
@@ -24,6 +22,9 @@ class AppPages {
       name: AppRoutes.INITIAL,
       page: () => const WelcomePage(),
       binding: WelcomeBinding(),
+      middlewares: [
+        RouteWelcomeMiddleware(priority: 1),
+      ],
     ),
 
 
@@ -32,17 +33,17 @@ class AppPages {
       page: () => const SignInPage(),
       binding: SignInBinding(),
     ),
-/*
+
     // check if needed to login or not
     GetPage(
       name: AppRoutes.Application,
       page: () => ApplicationPage(),
       binding: ApplicationBinding(),
       middlewares: [
-        RouteAuthMiddleware(priority: 1),
+        // RouteAuthMiddleware(priority: 1),
       ],
     ),
-
+/*
     // 最新路由
     // 首页
     GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),

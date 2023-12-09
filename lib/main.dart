@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'common/routes/pages.dart';
+import 'common/services/storage.dart';
+import 'common/store/config.dart';
+import 'common/store/user.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(); // Proper initialization without await
+  await Get.putAsync<StorageService>(() => StorageService().init());
+  Get.put<ConfigStore>(ConfigStore());
+  Get.put<UserStore>(UserStore());
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ); // Proper initialization without await
   runApp(const MyApp());
 }
 
