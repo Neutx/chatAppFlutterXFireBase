@@ -36,6 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  provider: ^6.1.1
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +53,8 @@ dev_dependencies:
   # 日期
   intl: ^0.17.0
 
+  glassmorphism:
+  
   # screen resizing
   flutter_screenutil: ^5.3.1
 
@@ -95,6 +98,8 @@ dev_dependencies:
   # 路径查询
   path_provider: ^2.0.9
 
+  path: ^1.8.3
+
   # permission 权限
   permission_handler: ^10.2.0
 
@@ -136,6 +141,9 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  smooth_page_indicator: ^1.1.0
+  lottie: ^2.7.0
+  liquid_swipe: ^3.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

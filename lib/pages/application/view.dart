@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, depend_on_referenced_packages, unnecessary_import
 
 import 'package:firebase_chat/common/widgets/button.dart';
+import 'package:firebase_chat/pages/contact/index.dart';
 import 'package:firebase_chat/pages/welcome/controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 
 import '../../common/values/colors.dart';
 import '../../common/values/shadows.dart';
+import '../homepage/view.dart';
+import '../message/view.dart';
 import 'controller.dart';
 
 class ApplicationPage extends GetView<ApplicationController> {
@@ -23,20 +26,11 @@ class ApplicationPage extends GetView<ApplicationController> {
         controller: controller.pageController,
         onPageChanged: controller.handlePageChanged,
         children: [
+          HomePage(),
+          MessagePage(),
+          ContactPage(),
           Center(
-            child: Center(
-              child: Text('chat'),
-            ),
-          ),
-          Center(
-            child: Center(
-              child: Text('contact'),
-            ),
-          ),
-          Center(
-            child: Center(
-              child: Text('me'),
-            ),
+            child: Text('me'),
           ),
         ],
       );
@@ -56,10 +50,7 @@ class ApplicationPage extends GetView<ApplicationController> {
     }
 
     return Scaffold(
-
         body: _buildPageView(),
-        bottomNavigationBar: _buildBottomNavigationBar()
-
-    );
+        bottomNavigationBar: _buildBottomNavigationBar());
   }
 }
